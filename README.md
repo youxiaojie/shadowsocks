@@ -3,7 +3,6 @@ shadowsocks
 
 [![PyPI version]][PyPI]
 [![Build Status]][Travis CI]
-[![Coverage Status]][Coverage]
 
 A fast tunnel proxy that helps you bypass firewalls.
 
@@ -22,12 +21,16 @@ Server
 Debian / Ubuntu:
 
     apt-get install python-pip
-    pip install shadowsocks
+    pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 
 CentOS:
 
     yum install python-setuptools && easy_install pip
-    pip install shadowsocks
+    pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+
+Linux distributions with [snap](http://snapcraft.io/):
+
+    snap install shadowsocks
 
 Windows:
 
@@ -52,9 +55,14 @@ To check the log:
 Check all the options via `-h`. You can also use a [Configuration] file
 instead.
 
+If you installed the [snap](http://snapcraft.io/) package, you have to prefix the commands with `shadowsocks.`,
+like this:
+
+    shadowsocks.ssserver -p 443 -k password -m aes-256-cfb
+    
 ### Usage with Config File
 
-[Create configeration file and run](https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File)
+[Create configuration file and run](https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File)
 
 To start:
 
@@ -78,8 +86,6 @@ Apache License
 
 
 [Build Status]:      https://img.shields.io/travis/shadowsocks/shadowsocks/master.svg?style=flat
-[Coverage Status]:   https://jenkins.shadowvpn.org/result/shadowsocks
-[Coverage]:          https://jenkins.shadowvpn.org/job/Shadowsocks/ws/PYENV/py34/label/linux/htmlcov/index.html
 [PyPI]:              https://pypi.python.org/pypi/shadowsocks
 [PyPI version]:      https://img.shields.io/pypi/v/shadowsocks.svg?style=flat
 [Travis CI]:         https://travis-ci.org/shadowsocks/shadowsocks
